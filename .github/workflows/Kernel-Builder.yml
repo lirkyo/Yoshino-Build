@@ -38,11 +38,7 @@ jobs:
           cd $GITHUB_WORKSPACE/kernel_buildspace
           git clone --depth=1 ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} kernel-source
 
-      - name: Setup KernelSU
-        run: |
-          cd $GITHUB_WORKSPACE/kernel_buildspace/kernel-source
-          rm -rf KernelSU
-          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+
 
       - name: Build kernel
         run: |
